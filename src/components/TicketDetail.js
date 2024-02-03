@@ -9,14 +9,16 @@ function TicketDetail(props) {
             <h1>Ticket Detail</h1>
             <h3>{ticket.locations} - {ticket.names}</h3>
             <p><em>{ticket.issue}</em></p>
-            <button onClick={()=> onClickingDelete(ticket.id) }>Close Ticket</button>
+            <button onClick={ props.onClickingEdit }>Update Ticket</button>
+            <button onClick={()=> props.onClickingDelete(ticket.id) }>Close Ticket</button>
             <hr/>
         </React.Fragment>
     );
 }
 
 TicketDetail.propTypes = {
-    ticket: PropTypes.object
-    onClickingDelete: PropTypes.func
+    ticket: PropTypes.object,
+    onClickingDelete: PropTypes.func,
+    onClickingEdit: PropTypes.func
 };
 export default TicketDetail;
